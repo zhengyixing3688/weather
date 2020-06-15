@@ -1,0 +1,180 @@
+//导入less变量
+@import "./variable";
+
+.weather-box{
+  color: @fontColor;
+}
+
+/*6点-12点 6 <= x < 12*/
+.morning{
+  background-image: linear-gradient(to bottom, #5476FE, #6FB1FF);
+}
+/* 12点-19点 12 <= x < 19 */
+.day{
+  background-image: linear-gradient(to bottom, #FD7537, #FFAB53);
+}
+/*19点- 6点 12 <= x < 第二天6点  */
+.night{
+  background-image: linear-gradient(to bottom, #4B36FF, #B560FB);
+}
+
+//一行文本溢出截断，以省略号方式显示
+.one-text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon-box(@imgName){
+  width: .24rem;
+  height: .24rem;
+  background: url(@imgName) no-repeat center center;
+  background-size: cover;
+  margin-top: .03rem;
+}
+
+.weather-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .system{
+    position: sticky;
+    top: 0;
+    height: .24rem;
+  }
+
+  .search{
+    padding: .1rem;
+
+    .location{
+      width: 1rem;
+      height: .3rem;
+    }
+
+    .search-box{
+      width: calc(~"100% - 1.5rem");
+      height: .3rem;
+      margin-left: .2rem;
+      padding: 0 .15rem;
+      border-radius: .15rem;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, .2), rgba(255, 255, 255, .65));
+    }
+
+    .location-text{
+      font-size: .16rem;
+      line-height: .3rem;
+      width: .76rem;
+      .one-text;
+    }
+
+    .location-icon{
+      .icon-box("@{url}/location.png");
+    }
+
+    .search-icon{
+      .icon-box("@{url}/search.png");
+    }
+
+    .search-ipt{
+      width: calc(~"100% - .24rem");
+      height: .3rem;
+      color: @fontColor
+    }
+  }
+
+  .weather-info{
+    margin-top: .5rem;
+    .now-weather{
+      text-align: center;
+    }
+    .now{
+      font-size: .48rem;
+    }
+    .now-desc{
+      font-size: .16rem;
+    }
+    .now-status{
+      margin-right: .2rem;
+    }
+
+    .wind-box{
+      margin-top: .4rem;
+      padding: 0 .5rem;
+      font-size: .16rem;
+    }
+    .wind-item{
+      width: 33.3333%;
+      text-align: center;
+      position: relative;
+    }
+
+    .line{
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      height: .28rem;
+      width: .01rem;
+      background-color: #fff;
+    }
+
+    .preview{
+      text-align: center;
+      margin-top: .2rem;
+    }
+
+    .day-hour-box{
+      margin-top: .4rem;
+    }
+    .day-hour-title{
+      width: 1.68rem;
+      margin: 0 auto;
+      position: relative;
+      padding-bottom: .1rem;
+      font-size: .16rem;
+    }
+    .title-item{
+      &:first-child{
+        margin-right: .4rem;
+      }
+      width: .64rem;
+    }
+    .move-line{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: .64rem;
+      height: .02rem;
+      background-color: #fff;
+    }
+
+    .weather-content{
+      margin-top: .4rem;
+      padding: 0 .15rem;
+      overflow-x: auto;
+    }
+
+    .weather-list{
+      width: 5.6rem;
+    }
+
+    .weather-item{
+      width: .8rem;
+    }
+
+    .date{
+      font-size: .12rem;
+      text-align: center;
+    }
+
+    .weather-icon{
+      width: .2rem;
+      height: .2rem;
+      margin: .15rem auto;
+    }
+  }
+}

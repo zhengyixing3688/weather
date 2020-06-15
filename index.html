@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>康康天气</title>
+  <link rel="stylesheet" href="./css/reset.min.css" />
+  <link rel="stylesheet" href="./css/index.min.css" />
+</head>
+<body>
+  
+  <div class="weather-box">
+
+    <!-- 系统导航 -->
+    <div class="system"></div>
+
+    <!-- 搜索 -->
+    <div class="search clearfix">
+      <div class="fl location">
+        <div class="fl location-text"></div>
+        <div class="fl location-icon"></div>
+      </div>
+      <div class="fl search-box">
+        <input class="search-ipt fl" type="text" />
+        <span class="search-icon fl"></span>
+      </div>
+    </div>
+
+    <!-- 天气信息 -->
+    <div class="weather-info">
+
+      <!-- 实况天气 -->
+      <div class="now-weather">
+        <div class="now"><span class="w" id="tmp"></span>℃</div>
+        <div class="now-desc">
+          <span class="now-status w" id="cond_txt"></span>
+          <span id="tmp-range">28~30</span>
+        </div>
+      </div>
+
+      <!-- 风向-可见度-湿度 -->
+      <div class="wind-box">
+        <div class="clearfix">
+          <div class="fl wind-item">
+            <div class="w" id="wind_sc"></div>
+            <div class="w" id="wind_dir"></div>
+            <i class="line"></i>
+          </div>
+          <div class="fl wind-item">
+            <div class="w" id="vis"></div>
+            <div>可见度</div>
+            <i class="line"></i>
+          </div>
+          <div class="fl wind-item">
+            <div class="w" id="hum"></div>
+            <div>相对湿度</div>
+          </div>
+        </div>
+        <div class="preview">暂无数据</div>
+      </div>
+
+      <!-- 每日-每小时天气 -->
+      <div class="day-hour-box">
+
+        <div class="day-hour-title clearfix">
+          <div class="fl title-item" data-type="daily_forecast">
+            <span>逐日预报</span>
+          </div>
+          <div class="fl title-item" data-type="hourly">
+            <span>逐时预报</span>
+          </div>
+
+          <!-- 下划线 -->
+          <i class="move-line"></i>
+        </div>
+
+        <div class="weather-content">
+
+          <div class="weather-list clearfix">
+        
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./js/rem.js"></script>
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>
